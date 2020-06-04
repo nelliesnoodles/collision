@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="collision.js"></script>
+    <link rel="stylesheet" href="collision_style.css" />
+    <title>Collision Test</title>
+</head>
+<body>
+    <h1> Collision variables:</h1>
+    <form id="x_table">
+        <label for="user_x1">first x coordinate:</label>
+        <input id="user_x1" type="number" required />
+        <label for="user_x2">second x coordinate:</label>
+        <input id="user_x2" type="number" required />
+        <label for="user_range_x">enter range:</label>
+        <input id="user_range_x" type="number" required />
+
+    </form>
+    <button type="button" onclick="get_x_data()">Submit</button>
+    <table>
+        <tr>
+            <th>first x coordinate</th>
+            <th>second x coordinate</th>
+            <th>range</th>
+            <th>collision</th>
+        </tr>
+        <tr>
+            <td id="x_one">10</td>
+            <td id="x_two">7</td>
+            <td id="range_x">2</td>
+            <td id="bool_one">false</td>
+        </tr>
+
+    </table>
+    <form id="y_table">
+        <label for="user_y1"> first y coordinate:</label>
+        <input type="number" id="user_y1" required />
+        <label for="user_y2"> second y coordinate:</label>
+        <input type="number" id="user_y2" required />
+        <label for="user_range_y">enter range:</label>
+        <input id="user_range_y" type="number" />
+
+    </form>
+    <button onclick="get_y_data()">Submit</button>
+    <table>
+        <tr>
+            <th>first y coordinate</th>
+            <th>second y coordinate</th>
+            <th>range</th>
+            <th>collision</th>
+        </tr>
+        <tr>
+            <td id="y_one">89</td>
+            <td id="y_two">100</td>
+            <td id="range_y">13</td>
+            <td id="bool_two">true</td>
+        </tr>
+
+    </table>
+    <div class="center flex-column">
+    <canvas id="bounce" height="300" width="300">
+
+    </canvas>
+        <table id="bounce_table">
+            <tr>
+            <th>x coordinates</th>
+            <th>y coordinates</th>
+            <th>collision</th>
+                </tr>
+            <tr>
+                <td id="show_x_coords"></td>
+                <td id="show_y_coords"></td>
+                <td id="show_bool"></td>
+            </tr>
+
+        </table>
+        </div>
+
+
+</body>
+</html>

@@ -220,7 +220,7 @@ function collision_animation() {
         bool_value = 'true'
         
     }
-    if (planet_x <= 15 ) {
+    if (planet_x <= 5 ) {
         direction_x = 1
         bool_value = 'true'
     }
@@ -229,7 +229,7 @@ function collision_animation() {
         direction_y *= -1
         bool_value = 'true'
     }
-    if (planet_y < 15) {
+    if (planet_y <= 5) {
         direction_y = 1
         bool_value = 'true'
     }

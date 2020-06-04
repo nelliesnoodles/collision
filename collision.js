@@ -44,6 +44,7 @@ var show_bool;
 
 
 function set_DOM() {
+    // set all elements being manipulated by user or changing in the page
     coord_x1 = document.getElementById('x_one');
     coord_x2 = document.getElementById('x_two');
     range_x = document.getElementById('range_x');
@@ -86,12 +87,12 @@ class Collision {
         this.range_x = range_x
         this.range_y = range_y
     }
-
-    check_collide_x() {
-        /*
+      /*    --- COLLISION DETECTION ---
          * If the x, y of the class items are within range of each other,
          * return a True for collision detected, False if they are not within range
          */
+    check_collide_x() {
+       
         var check_x = Math.abs(this.item_x - this.item2_x)
        
         if (check_x <= this.range_x) {
@@ -121,6 +122,7 @@ class Collision {
 
 
 function test_collide() {
+    // Initial test function used to test the page & class functionality
     var x1 = 2;
     var x2 = 5;
     var y1 = 3;
@@ -147,6 +149,9 @@ function test_collide() {
 
 function get_x_data() {
     console.log(" x data submission entered")
+    /* we set the y variables to something that would return true */
+    // the original class was set up to only test x and y in the same function
+    // the current version can look at them separately, but needs false data for y anyways.
     var y1 = 0
     var y2 = 0
     var r_of_y = 10
@@ -189,27 +194,33 @@ function get_y_data() {
 }
 
 function draw_planet() {
+    //set up a new image for canvas
     planet = new Image()
     planet.src = "planet.png"
+    // clear the entire canvas
     ctx.clearRect(0, 0, my_canvas.width, my_canvas.height);
+    //once the image is loaded, let ctx/canvas draw it on with coordinates
+    //because planet_x, and planet_y are changed each animation, the position
+    // of the image changes.
     planet.onload = () => {
         ctx.drawImage(planet, planet_x, planet_y, planet_width, planet_height);
 
     }
     
 }
-function load_coords() {
 
-}
 function collision_animation() {
     //these are collisions of image with canvas boundaries
+    // when the x position of the image intersects with the canvas boundaries on x,
+    // the planet changes course, by shifting the directional value to either negative
+    // or positive.   Using the class the range would be the differance we account for because of image size
     var bool_value = 'false'
     if (planet_x > x_boundary_max) {
         direction_x *= -1
         bool_value = 'true'
         
     }
-    if (planet_x < 15) {
+    if (planet_x <= 15 ) {
         direction_x = 1
         bool_value = 'true'
     }
@@ -244,11 +255,4 @@ window.onload = (event) => {
     
 };
 
-/*
-window.addEventListener('load', (event) => {
-    set_DOM()
-    //test_collide()
-    set_EventListeners()
-   
-});
-*/
+

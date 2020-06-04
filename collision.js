@@ -148,7 +148,7 @@ function test_collide() {
 }
 
 function get_x_data() {
-    console.log(" x data submission entered")
+    //console.log(" x data submission entered")
     /* we set the y variables to something that would return true */
     // the original class was set up to only test x and y in the same function
     // the current version can look at them separately, but needs false data for y anyways.
@@ -172,7 +172,7 @@ function get_x_data() {
 };
 
 function get_y_data() {
-    console.log(" y data submission entered")
+    //console.log(" y data submission entered")
     var y1 = parseInt(user_y1.value)
     var y2 = parseInt(user_y2.value)
     var r_of_y = parseInt(user_range_y.value)
